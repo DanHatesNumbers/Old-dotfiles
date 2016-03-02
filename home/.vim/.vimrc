@@ -14,6 +14,7 @@ set softtabstop=4
 set smarttab
 set autoindent
 set smartindent
+set expandtab
 
 "Sane defaults
 set encoding=utf-8
@@ -40,7 +41,7 @@ if has("gui_running")
   set guioptions-=T
 endif
 
-"Solarized dark
+"Solarized lighk
 syntax enable
 set background=dark
 colorscheme solarized
@@ -84,7 +85,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 "Open .vimrc in split window
-nnoremap <leader>ev <C-w><C-v><C-l>:e ~\vimfiles\.vimrc<cr>
+nnoremap <leader>ev <C-w><C-v><C-l>:e ~\.vimrc<cr>
 
 "Use jj to escape to normal mode
 inoremap jj <ESC>
@@ -107,3 +108,6 @@ set statusline+=%{fugitive#statusline()}\
 map <leader>n :NERDTreeToggle<CR>
 
 nnoremap <leader>b :buffers<CR>:buffer<Space>
+
+"Sudo write
+nnoremap <leader>su :w !sudo tee %
